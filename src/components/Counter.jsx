@@ -12,7 +12,6 @@ export default function Counter({totalCount, onClick}) {
             <button
                 className='button'
                 onClick={() => {
-                    // setCount(count + 1);
                     setCount((prev) => prev + 1);   // setCount 훅의 마지막 값 prev
                     onClick();
                 }}
