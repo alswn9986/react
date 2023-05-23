@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-import AppProfile from './AppProfile';
 import reportWebVitals from './reportWebVitals';
-import AppCounter from './AppCounter';
-import AppProducts from './AppProducts';
+import AppMento from './AppMento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <AppProfile /> */}
-    {/* <AppCounter /> */}
-    <AppProducts />
+    <AppMento />
   </React.StrictMode>
 );
 
