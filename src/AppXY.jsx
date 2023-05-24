@@ -3,8 +3,6 @@ import './AppXY.css';
 
 export default function AppXY() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
 
     return (
         <div
