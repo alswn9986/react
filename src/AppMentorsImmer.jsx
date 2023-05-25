@@ -1,4 +1,3 @@
-import React, { useReducer, useState } from 'react';
 import { useImmer } from 'use-immer';
 
 export default function AppMentorsImmer() {
