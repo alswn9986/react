@@ -12,7 +12,7 @@ export default function Products() {
         setLoading(true);
         setError(undefined);
         // 상대경로를 쓰면 public에 접근 가능
-        fetch(`data/${checked ? 'sale_' : ''}produdcts.json`)
+        fetch(`data/${checked ? 'sale_' : ''}products.json`)
             .then((res) => res.json())
             .then((data) => {
                 console.log('fetch success');
