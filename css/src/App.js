@@ -3,6 +3,7 @@ import './App.css';
 import Button1 from './components/Button1';
 import Button2 from './components/Button2';
 import styled, { css } from 'styled-components';
+import TailwindComponent from './TailwindComponent';
 
 const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ function App() {
         <Button>Normal Button</Button>
         <Button primary>Primary Button</Button>
       </Container>
+      <TailwindComponent />
     </>
   );
 }
