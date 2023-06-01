@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 0.7rem;
+}
+
+.header {
+    background-color: grey;
+    height: 10%;
+    display: flex;
+}
+
+.mode {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sun {
+    color: white;
+    margin: auto 15px;
+}
+
+.tab {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.filter {
+    color: white;
+    margin: auto 15px;
+}
+
+.main {
+    background-color: beige;
+    height: 80%;
+}
+
+.footer {
+    background-color: grey;
+    height: 10%;
+}
