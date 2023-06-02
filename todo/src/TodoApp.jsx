@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoApp.css';
-import { FaSun } from "react-icons/fa";
+import { FaSun, FaTrash } from "react-icons/fa";
 
 export default function TodoApp() {
     return (
@@ -16,10 +16,19 @@ export default function TodoApp() {
                 </div>
             </div>
             <div className='main'>
-                MIDDLE
+                <div className='listWrap'>
+                    <input type='checkbox'></input>
+                    <span>강의보기</span>
+                    <FaTrash />
+                </div>
+                <div className='listWrap'>
+                    <input type='checkbox'></input>
+                    <span>산책하기</span>
+                    <FaTrash />
+                </div>
             </div>
             <div className='footer'>
-                <div>
+                <div className='addWrap'>
                     <input placeholder='Add TODO' />
                     <button>Add</button>
                 </div>
