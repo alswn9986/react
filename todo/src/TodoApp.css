@@ -95,6 +95,11 @@ table {
     text-decoration: none;
 }
 
+.active {
+    text-decoration: underline;
+    font-weight: 800;
+}
+
 .main {
     background-color: #00003F;
     height: 80%;

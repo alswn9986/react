@@ -12,7 +12,7 @@ export default function TodoApp() {
                 </div>
                 <div className='tab'>
                     <a className='filter' href='#'>All</a>
-                    <a className='filter' href='#'>Active</a>
+                    <a className='filter active' href='#'>Active</a>
                     <a className='filter' href='#'>Completed</a>
                 </div>
             </div>
