@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './TodoApp.css';
-import { FaSun } from "react-icons/fa";
+// import { FaSun } from "react-icons/fa";
+import { FiSun } from "react-icons/fi";
 import TodoItem from './components/TodoItem';
+import { DarkModeContext } from './context/DarkModeContext';
 
 export default function TodoApp() {
-    const filterList = [{key: 'all', value: 'All'}, {key: 'active', value: 'Active'}, {key: 'completed', value: 'Completed'}];
+    const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
+
+    const filterList = [{key: 'all', value: 'All'}, {key: 'a', value: 'Active'}, {key: 'c', value: 'Completed'}];
     const [activeFilter, setActiveFilter] = useState(filterList.find(x => x.key === 'all'));
     const handleFilter = (item) => {
         setActiveFilter(item);
@@ -18,17 +22,17 @@ export default function TodoApp() {
 
     const sample = [{
         id: getId(),
-        status: 'active',
+        status: 'a',
         content: '강의보기'
     }, {
         id: getId(),
-        status: 'completed',
+        status: 'c',
         content: '카페가기'
     }];
     const [list, setList] = useState(sample);
     const getItemObj = (newItem) => ({
         id: getId(),
-        status: 'active',
+        status: 'a',
         content: newItem
     });
     const handleAdd = () => {
@@ -40,11 +44,18 @@ export default function TodoApp() {
         setList([...list].filter(item => item.id !== id));
     };
 
+    const handleChangeCheck = (updatedItem) => {
+        const idx = list.findIndex(x => x.id === updatedItem.id);
+        const temp = [...list];
+        temp[idx] = updatedItem;
+        setList(temp);
+    };
+
     return (
-        <div className='container'>
+        <div className={darkMode ? 'container' : 'container light'}>
             <div className='header'>
                 <div className='mode'>
-                    <FaSun className='sun' />
+                    <FiSun className='sun' onClick={() => toggleDarkMode()} />
                 </div>
                 <div className='tab'>
                     {
@@ -56,7 +67,7 @@ export default function TodoApp() {
                 {
                     list.map(item => {
                         if (activeFilter.key === 'all' || item.status === activeFilter.key) {
-                            return (<TodoItem key={item.id} id={item.id} content={item.content} handleDelete={handleDelete} />)
+                            return (<TodoItem key={item.id} item={item} handleDelete={handleDelete} handleChangeCheck={handleChangeCheck} />)
                         }
                     })
                 }

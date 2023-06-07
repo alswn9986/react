@@ -67,6 +67,10 @@ table {
     display: flex;
 }
 
+.light .header {
+    background-color: #FFEFEF
+}
+
 .mode {
     width: 20%;
     height: 100%;
@@ -78,6 +82,10 @@ table {
 .sun {
     color: white;
     margin: auto 15px;
+}
+
+.light .sun{
+    color: black;
 }
 
 .tab {
@@ -95,6 +103,10 @@ table {
     text-decoration: none;
 }
 
+.light .filter {
+    color: #DB8383;
+}
+
 .active {
     text-decoration: underline;
     font-weight: 800;
@@ -110,6 +122,10 @@ table {
     box-sizing: border-box;
 }
 
+.light .main {
+    background-color: #FFFCFC;
+}
+
 .listWrap {
     padding: 10px 0px;
     color: white;
@@ -119,6 +135,10 @@ table {
     word-break: break-all;
     display: flex;
     /* align-items: center; */
+}
+
+.light .listWrap {
+    color: black;
 }
 
 .listWrap > input {
@@ -140,6 +160,10 @@ table {
     display: flex;
     align-items: center;
     padding: 0px 10px;
+}
+
+.light .footer {
+    background-color: #FFEFEF;
 }
 
 .addWrap {
@@ -166,4 +190,8 @@ table {
     background-color: #EDA900;
     color: white;
     border: 0px;
+}
+
+.light .addWrap > button {
+    background-color: #DB8383;
 }
