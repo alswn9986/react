@@ -4,6 +4,7 @@ import './TodoApp.css';
 import { FiSun } from "react-icons/fi";
 import TodoItem from './components/TodoItem';
 import { DarkModeContext } from './context/DarkModeContext';
+import {v4 as uuidv4} from 'uuid';
 
 export default function TodoApp() {
     const {darkMode, toggleDarkMode} = useContext(DarkModeContext);
@@ -14,30 +15,31 @@ export default function TodoApp() {
         setActiveFilter(item);
     };
 
-    const getId = () => new Date().getTime() + Math.random();
     const [newItem, setNewItem] = useState('');
     const handleInput = (e) => {
         setNewItem(e.target.value);
     };
 
     const sample = [{
-        id: getId(),
+        id: uuidv4(),
         status: 'a',
         content: '강의보기'
     }, {
-        id: getId(),
+        id: uuidv4(),
         status: 'c',
         content: '카페가기'
     }];
     const [list, setList] = useState(sample);
     const getItemObj = (newItem) => ({
-        id: getId(),
+        id: uuidv4(),
         status: 'a',
         content: newItem
     });
     const handleAdd = () => {
-        setNewItem('');
-        setList([...list, getItemObj(newItem)]);
+        if (newItem.trim().length > 0) {
+            setNewItem('');
+            setList([...list, getItemObj(newItem)]);
+        }
     };
 
     const handleDelete = (id) => {
@@ -45,10 +47,11 @@ export default function TodoApp() {
     };
 
     const handleChangeCheck = (updatedItem) => {
-        const idx = list.findIndex(x => x.id === updatedItem.id);
-        const temp = [...list];
-        temp[idx] = updatedItem;
-        setList(temp);
+        // const idx = list.findIndex(x => x.id === updatedItem.id);
+        // const temp = [...list];
+        // temp[idx] = updatedItem;
+        // setList(temp);
+        setList(list.map((t) => t.id === updatedItem.id ? updatedItem : t));
     };
 
     return (

@@ -13,7 +13,7 @@ export default function TodoItem(props) {
 
     return (
         <div className='listWrap'>
-            <input type='checkbox' checked={props.item.status === 'c' ? 'checked' : ''} onChange={handleChangeCheck} />
+            <input type='checkbox' checked={props.item.status === 'c'} onChange={handleChangeCheck} />
             <span>{props.item.content}</span>
             <FiTrash2 onClick={handleDelete} />
         </div>
