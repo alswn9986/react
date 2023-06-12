@@ -1,16 +1,18 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
+import NotFound from './pages/NotFound';
+import Root from './pages/Root';
+import Videos from './pages/Videos';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <p>Home</p>,
-    errorElement: <p>Not Found😒</p>
-  },
-  {
-    path: '/videos',
-    element: <p>videos</p>,
-    errorElement: <p>Not Found😒</p>
+    element: <Root />,
+    errorElement: <NotFound />,
+    children: [
+      {index: true, elemet: <Home />},
+      {path: '/videos', elemet: <Videos />}
+    ]
   }
 ]);
 
